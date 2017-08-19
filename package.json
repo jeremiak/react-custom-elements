@@ -1,0 +1,24 @@
+{
+  "name": "rollup-starter-lib",
+  "version": "1.0.0",
+  "main": "dist/react-like.cjs.js",
+  "module": "dist/react-like.esm.js",
+  "browser": "dist/react-like.umd.js",
+  "dependencies": {
+    "morphdom": "^2.3.3",
+    "ms": "^2.0.0"
+  },
+  "devDependencies": {
+    "html-element": "^2.2.0",
+    "rollup": "^0.46.0",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "npm run build && node test/test.js",
+    "pretest": "npm run build"
+  },
+  "files": ["dist"]
+}
