@@ -1,46 +1,23 @@
-# rollup-starter-lib
+# react-custom-elements
 
-This repo contains a bare-bones example of how to create a library using Rollup, including importing a module from `node_modules` and converting it from CommonJS.
+A base custom element class that has a `react` inspired API.
 
-We're creating a library called `how-long-till-lunch`, which usefully tells us how long we have to wait until lunch, using the [ms](https://github.com/zeit/ms) package:
+## Why?
 
-```js
-console.log('it will be lunchtime in ' + howLongTillLunch());
-```
+React is cool. I like to use it in my personal and professional work. But I don't like build processes and I'd _almost_ always prefer a native API to requiring a library.
 
-## Getting started
+React's component model is great, and the current custom elements spec left me in somewhat of an uncanny valley where it was similar in some ways to React but not in all of them.
 
-Clone this repository and install its dependencies:
+I want to use web components/custom elements but I want them to be a little bit better. I want them to render themselves and use attributes/props and internal state.
 
-```bash
-git clone https://github.com/rollup/rollup-starter-lib
-cd rollup-starter-lib
-npm install
-```
+## So what is this?
 
-`npm run build` builds the library to `dist`, generating three files:
+I don't really know, it is mostly a sketch of an idea I had to use DOM native custom elements with the React API I am familiar with.
 
-* `dist/how-long-till-lunch.cjs.js`
-    A CommonJS bundle, suitable for use in Node.js, that `require`s the external dependency. This corresponds to the `"main"` field in package.json
-* `dist/how-long-till-lunch.esm.js`
-    an ES module bundle, suitable for use in other people's libraries and applications, that `import`s the external dependency. This corresponds to the `"module"` field in package.json
-* `dist/how-long-till-lunch.umd.js`
-    a UMD build, suitable for use in any environment (including the browser, as a `<script>` tag), that includes the external dependency. This corresponds to the `"browser"` field in package.json
+### Example
 
-`npm run dev` builds the library, then keeps rebuilding it whenever the source files change using [rollup-watch](https://github.com/rollup/rollup-watch).
+For now, take a look in `/examples`.
 
-`npm test` builds the library, then tests it.
+## It doesn't work!
 
-*Note that you would often include the `dist` folder in your [.gitignore](https://github.com/rollup/rollup-starter-lib/blob/master/.gitignore) file, but they are included here for ease of illustration.*
-
-
-## Variations
-
-* [babel](https://github.com/rollup/rollup-starter-lib/tree/babel) — illustrates writing the source code in ES2015 and transpiling it for older environments with [Babel](https://babeljs.io/)
-* [buble](https://github.com/rollup/rollup-starter-lib/tree/buble) — similar, but using [Bublé](https://buble.surge.sh/) which is a faster alternative with less configuration
-
-
-
-## License
-
-[MIT](LICENSE).
+Ya, that seems pretty likely. If you think this, mind opening an issue so we can discuss it? Ultimately, I'd love to just build isolated components in a way that didn't rely on a library from a large tech company and prefer to use adopted standards.

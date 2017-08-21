@@ -1,5 +1,5 @@
 {
-  "name": "rollup-starter-lib",
+  "name": "react-custom-elements",
   "version": "1.0.0",
   "main": "dist/react-like.cjs.js",
   "module": "dist/react-like.esm.js",
@@ -31,7 +31,5 @@
     "test": "karma start karma.conf.js --single-run",
     "test:watch": "karma start karma.conf.js"
   },
-  "files": [
-    "dist"
-  ]
+  "files": ["dist"]
 }
