@@ -1,0 +1,60 @@
+<html lang="en">
+
+<head>
+  <title>react-like custom elements</title>
+  <link href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <h1>react-like custom elements</h1>
+  <div class="clearfix" id="childless">
+    <h2>with no children</h2>
+
+    <div class="col col-12 sm-col-6">
+      <label>
+        the greeting should update as you change the value of this text field
+        <input type="text" placeholder="Foo"></input>
+      </label>
+
+      <hi-greeting name="Foo"></hi-greeting>
+    </div>
+    <div class="col col-12 sm-col-6">
+      <p class='m0'>original custom element markup</p>
+      <code>
+        &lt;hi-greeting name="Foo">&lt;/hi-greeting>
+      </code>
+    </div>
+  </div>
+  <div class="clearfix" id="children">
+    <h2>with children</h2>
+    <div class="col col-12 sm-col-6">
+      <label for="name">the greeting should update as you change the value of this text field</label>
+      <input type="text" id="children-name" placeholder="Bar"></input>
+      <hi-greeting id="foo" name="Bar">, how are you doing?</hi-greeting>
+    </div>
+    <div class="col col-12 sm-col-6">
+      <p class='m0'>original custom element markup</p>
+      <code>
+        &lt;hi-greeting id="foo" name="Bar">, how are you doing?&lt;/hi-greeting>
+      </code>
+    </div>
+  </div>
+  <script src="/dist/react-custom-elements.umd.js"></script>
+  <script src="HiGreeting.js"></script>
+  <script>
+    const childless = document.querySelector('#childless')
+    const children = document.querySelector('#children')
+
+    const childlessEl = childless.querySelector('hi-greeting')
+    const childrenEl = children.querySelector('hi-greeting')
+
+    childless.querySelector('input').addEventListener('keyup', e => {
+      childlessEl.name = e.target.value
+    })
+
+    children.querySelector('input').addEventListener('keyup', e => {
+      childrenEl.name = e.target.value
+    })
+  </script
+  </body>
+</html>
