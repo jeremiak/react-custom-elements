@@ -16,8 +16,12 @@ I don't really know, it is mostly a sketch of an idea I had to use DOM native cu
 
 ### Example
 
-For now, take a look in `/examples`.
+For now, take a look in `/examples`. If you want to run the project after downloading/cloning:
+
+1. `npm install`
+2. `npm run start`
+3. Navigate to the web server and explore the examples
 
 ## It doesn't work!
 
-Ya, that seems pretty likely. If you think this, mind opening an issue so we can discuss it? Ultimately, I'd love to just build isolated components in a way that didn't rely on a library from a large tech company and prefer to use adopted standards.
+Ya, that seems pretty likely. If you think this, mind opening an issue so we can discuss it? Ultimately, I'd love to just build isolated components in a way that didn't rely on a library from a large tech company and prefer standards.
