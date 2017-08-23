@@ -1,8 +1,8 @@
-import ReactLike from '../src/main.js'
+import CustomElement from '../src/CustomElement.js'
 
 const noop = () => {}
 
-describe('ReactLike', () => {
+describe('CustomElement', () => {
   describe('in usage', () => {
     it('should work', () => {})
   })
@@ -20,7 +20,7 @@ describe('ReactLike', () => {
       const obj = Object.assign({}, base, {
         initDefaultProps: spy
       })
-      const fn = ReactLike.prototype.connectedCallback.bind(obj)
+      const fn = CustomElement.prototype.connectedCallback.bind(obj)
       fn()
       expect(spy.callCount).to.equal(1)
     })
@@ -30,7 +30,7 @@ describe('ReactLike', () => {
       const obj = Object.assign({}, base, {
         initPropAccessors: spy
       })
-      const fn = ReactLike.prototype.connectedCallback.bind(obj)
+      const fn = CustomElement.prototype.connectedCallback.bind(obj)
       fn()
       expect(spy.callCount).to.equal(1)
     })
@@ -40,7 +40,7 @@ describe('ReactLike', () => {
       const obj = Object.assign({}, base, {
         componentDidMount: spy
       })
-      const fn = ReactLike.prototype.connectedCallback.bind(obj)
+      const fn = CustomElement.prototype.connectedCallback.bind(obj)
       fn()
       expect(spy.callCount).to.equal(1)
     })
@@ -52,7 +52,7 @@ describe('ReactLike', () => {
       const obj = {
         componentDidUnmount: spy
       }
-      const fn = ReactLike.prototype.disconnectedCallback.bind(obj)
+      const fn = CustomElement.prototype.disconnectedCallback.bind(obj)
       fn()
       expect(spy.callCount).to.equal(1)
     })
@@ -61,7 +61,7 @@ describe('ReactLike', () => {
   describe('render()', () => {
     it('should return a string', () => {
       const obj = { props: {}, state: {} }
-      const actual = ReactLike.prototype.render.apply(obj)
+      const actual = CustomElement.prototype.render.apply(obj)
       expect(typeof actual).to.equal('string')
     })
   })
@@ -69,7 +69,7 @@ describe('ReactLike', () => {
   describe('setState()', () => {
     it('should set new state keys without replacing old', () => {
       const obj = { state: { first: 'foo' }, update: () => {} }
-      const fn = ReactLike.prototype.setState.bind(obj)
+      const fn = CustomElement.prototype.setState.bind(obj)
       fn({ second: 'dude' })
       expect(obj.state.first).to.equal('foo')
       expect(obj.state.second).to.equal('dude')
@@ -77,7 +77,7 @@ describe('ReactLike', () => {
 
     it('should replace old state keys', () => {
       const obj = { state: { first: 'foo' }, update: () => {} }
-      const fn = ReactLike.prototype.setState.bind(obj)
+      const fn = CustomElement.prototype.setState.bind(obj)
       fn({ first: 'dude' })
       expect(obj.state.first).to.equal('dude')
     })
@@ -85,7 +85,7 @@ describe('ReactLike', () => {
     it('should call update', () => {
       const spy = sinon.spy()
       const obj = { state: { first: 'foo' }, update: spy }
-      const fn = ReactLike.prototype.setState.bind(obj)
+      const fn = CustomElement.prototype.setState.bind(obj)
       fn({ second: 'dude' })
       expect(spy.callCount).to.equal(1)
     })

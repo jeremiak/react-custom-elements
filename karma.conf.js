@@ -38,7 +38,7 @@ module.exports = function(config) {
         require('rollup-plugin-commonjs')()
       ],
       format: 'iife', // Helps prevent naming collisions.
-      moduleName: 'ReactLike', // Required for 'iife' format.
+      moduleName: 'customElements', // Required for 'iife' format.
       sourceMap: 'inline' // Sensible for testing.
     },
 
