@@ -1,9 +1,9 @@
 {
   "name": "react-custom-elements",
   "version": "1.0.0",
-  "main": "dist/react-like.cjs.js",
-  "module": "dist/react-like.esm.js",
-  "browser": "dist/react-like.umd.js",
+  "main": "dist/react-custom-elements.cjs.js",
+  "module": "dist/react-custom-elements.esm.js",
+  "browser": "dist/react-custom-elements.umd.js",
   "dependencies": {
     "morphdom": "^2.3.3",
     "ms": "^2.0.0"
@@ -11,6 +11,7 @@
   "devDependencies": {
     "chai": "^4.1.1",
     "html-element": "^2.2.0",
+    "http-server": "^0.10.0",
     "karma": "^1.7.0",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^2.2.0",
@@ -25,11 +26,15 @@
     "sinon": "^3.2.1"
   },
   "scripts": {
+    "start": "npm run build && npm run server",
     "build": "rollup -c",
     "build:watch": "rollup -c -w",
-    "dev": "npm run build:watch",
+    "dev": "npm run build:watch & npm run server",
     "test": "karma start karma.conf.js --single-run",
-    "test:watch": "karma start karma.conf.js"
+    "test:watch": "karma start karma.conf.js",
+    "server": "http-server"
   },
-  "files": ["dist"]
+  "files": [
+    "dist"
+  ]
 }
